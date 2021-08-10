@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <p>{{a}}</p>
+    </div>
+<div id="example"></div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                a: 10,
+            },
+            created: function () {
+                console.log("实例被创建之后", this.a, this.$el);
+            },
+
+            mounted: function () {
+                console.log("挂载之后", this.a, this.$el, document.querySelector("p"));
+            },
+        })
+        var data = { a: 1 }
+        var vm = new Vue({
+            el: '#example',
+            data: data
+        })
+
+        vm.$data === data 
+        vm.$el === document.getElementById('example') 
+
+      
+        vm.$watch('a', function (newValue, oldValue) {
+        })
+    </script>
+</body>
+
+</html>

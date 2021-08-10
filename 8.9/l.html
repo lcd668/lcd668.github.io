@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text"v-model="name">
+        <h1 v-bind:title="text">{{name}} {{msg}} </h1>
+        <!-- v-bind 将这个元素节点的 title attribute 和 Vue 实例的 message property 保持一致 -->
+        <h2 v-if="show">国王的新字</h2>
+        <!-- v-if 条件语句 -->
+        <ol>
+            <li v-for="run in runs">{{run.text}}</li>
+        </ol>
+
+        <button v-on:click="fz">反转消息</button>
+
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                msg: 'hello world',
+                name:'北京',
+                text: '12345678',
+                show: false,
+                runs: [
+                    { text: '1234hj567i' },
+                    { text: '42456sdf7i' },
+                    { text: '12765467i' },
+                    { text: '1234dfgj67i' },
+                ]
+            },
+            methods: {
+                fz: function () {
+                    this.name = this.name.split('').reverse().join('')
+                }
+            }
+        })
+        setInterval(() => {
+            app.msg = new Date().toLocaleTimeString();
+        }, 1000);
+
+
+    </script>
+</body>
+
+</html>

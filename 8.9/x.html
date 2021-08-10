@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        body {
+
+            background-image: linear-gradient(-90deg, pink, rgba(17, 177, 142, 0.212), indigo);
+
+        }
+
+        input {
+            outline: none;
+            border: 3px solid skyblue;
+            text-indent: 1em;
+            font-size: 26px;
+            width: 200px;
+            border-radius: 30px;
+            margin: 50px;
+            padding: 2px;
+            transition: all 0.5s;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        input:focus {
+            width: 500px;
+        }
+
+        h1 {
+            font-size: 52px;
+            color: pink;
+            margin-left: 50px;
+            width: 50%;
+           
+        }
+
+        #app {
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" maxlength="20" v-model="msg">
+        <h1>{{msg}}</h1>
+    </div>
+
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                msg: "hello world"
+            }
+        })
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .max {
+            font-size: 34px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        
+        <!-- v-once -->
+        <span v-once>{{msg}}</span>
+        
+        <!-- v-html -->
+        <p v-bind:class="max"> {{ rawHtml }}</p>
+        <p> <span v-html="rawHtml"></span></p>
+        
+        <!-- 可以进行运算 -->
+        <p >{{number+2}}</p>
+        
+        <a v-bind:href="url">...</a>
+        <!-- 三目运算符 -->
+        <p>{{1>=1 ? 'yes':'no'}}</p>
+        
+        <!-- 函数 -->
+        <p>{{lsp.split('').reverse().join('')}}</p>
+    </div>
+    <div id="aps"></div>
+    <script>
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                msg: "12345",
+                rawHtml: "<b style='color:red'>v-html</b>",
+                max: "max",
+                number: 10,
+                lsp: "lsp",
+                url:"https://www.bilibili.com/",
+            },
+
+        })
+        var aps = new Vue({
+            el: "#aps",
+            data: {
+
+            },
+            template: '<button>按钮</button>',
+        })
+
+
+    </script>
+</body>
+
+</html>

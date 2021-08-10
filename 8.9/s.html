@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<style>
+    button{
+        outline: none;
+
+    }
+</style>
+</head>
+
+<body>
+    <div id="app">
+        <ol>
+            <todo-item v-for="item in itlist" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
+    </div>
+
+    <div id="aps">
+        <btn></btn>
+    </div>
+
+    <script>
+
+        Vue.component('btn', {
+            data: function () {
+                return {
+                    cont: 0
+                }
+            },
+            template: '<button v-on:click="cont++">你已经点击了{{cont}}次.</button>'
+        })
+
+        var aps = new Vue({
+            el: "#aps",
+
+        })
+
+
+
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>{{todo.text}}</li>'
+        })
+
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                itlist: [
+                    { id: 0, text: '素菜' },
+                    { id: 1, text: '肉肉' },
+                    { id: 2, text: '菌类' },
+
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>
