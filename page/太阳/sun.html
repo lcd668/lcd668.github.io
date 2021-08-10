@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+
+		}
+
+		body {
+			background-color: rgb(244, 192, 66);
+		}
+
+		.box {
+			padding: 180px;
+		}
+
+		.sun {
+			margin: 0 auto;
+			height: 200px;
+			width: 300px;
+		}
+
+		.sunbody {
+			animation: osun 3s infinite;
+			position: relative;
+			transition: osun 3s;
+		}
+
+		.eye {
+			position: absolute;
+			top: 240px;
+			left: 565px;
+			animation: usun 3s infinite;
+
+		}
+
+		.gen {
+			position: absolute;
+			top: 240px;
+			left: 460px;
+		}
+
+		@keyframes osun {
+			0% {
+				transform: rotate(0deg);
+				top: 0px
+			}
+
+			25% {
+				transform: rotate(0deg);
+				top: -50px
+			}
+
+			40% {
+				transform: rotate(360deg);
+				top: -50px
+			}
+
+			50% {
+				transform: rotate(360deg);
+				top: -50px
+			}
+
+			75% {
+				transform: rotate(360deg);
+				top: 0px
+			}
+
+			100% {
+				transform: rotate(360deg);
+				top: 0px
+			}
+		}
+
+		@keyframes usun {
+			0% {
+				left: 565px;
+				top: 280px
+			}
+
+			25% {
+				left: 565px;
+				top: 200px
+			}
+
+			50% {
+				left: 610px;
+				top: 200px;
+			}
+
+			75% {
+				left: 610px;
+				top: 280px
+			}
+
+			100% {
+				left: 565px;
+				top: 280px
+			}
+		}
+
+		p {
+			position: absolute;
+			font-weight: 600;
+			top: 255px;
+			left: 550px;
+			font-size: 26px;
+			color: rgb(122, 86, 0);
+			animation: op 3s infinite;
+			transition: op 3s;
+
+		}
+
+		@keyframes op {
+			0% {
+				color: rgb(228, 197, 125);
+				opacity: 0;
+			}
+
+			10% {
+				opacity: 1;
+				color: rgb(122, 86, 0);
+
+			}
+
+			25% {
+				opacity: 1;
+			}
+
+			50% {}
+
+			75% {
+				opacity: 0;
+			}
+
+			100% {
+				color: rgb(228, 197, 125);
+				opacity: 0;
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class='box'>
+		<div class='sun'>
+			<img src="../image/sun.png" alt="" class='sunbody'>
+			<img src="../image/eye.png" alt="" class='eye'>
+			<img src="../image/1.png" alt="" class='gen'>
+		</div>
+		<p>loading...</p>
+	</div>
+</body>
+
+</html>

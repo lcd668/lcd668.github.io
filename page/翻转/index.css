@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #1f2029;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .abox {
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  position: relative;
+  width: 445px;
+  height: 400px;
+  transition: all 1s;
+  background-color: #2a2b38;
+  border-radius: 10px;
+  background-image: url("https://www.17sucai.com/preview/1097306/2020-11-18/dlcc/images/pat.svg");
+}
+body .abox .login {
+  position: absolute;
+  width: 446px;
+  padding: 0 48px;
+  box-sizing: border-box;
+  transform: translateZ(50px);
+}
+body .abox .login h1 {
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+}
+body .abox .login input {
+  outline: none;
+  border: none;
+  background-color: #1f2029;
+  height: 45px;
+  width: 345px;
+  text-indent: 1em;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+body .abox .login .denglu {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+body .abox .login .denglu button {
+  border: none;
+  outline: none;
+  width: 105px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: #ffeba7;
+}
+body .abox .login .denglu button:hover {
+  background-color: #f3d97f;
+}
+body .abox .login .qiehuan {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+body .abox .register {
+  transform: translateZ(-50px) rotateY(180deg);
+  position: absolute;
+  width: 446px;
+  padding: 0 48px;
+  box-sizing: border-box;
+}
+body .abox .register h1 {
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+}
+body .abox .register input {
+  outline: none;
+  border: none;
+  background-color: #1f2029;
+  height: 45px;
+  width: 345px;
+  text-indent: 1em;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+body .abox .register .zhuce {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+body .abox .register .zhuce button {
+  border: none;
+  outline: none;
+  width: 105px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: #ffeba7;
+}
+body .abox .register .zhuce button:hover {
+  background-color: #f3d97f;
+}
+body .abox .register .qiehuen {
+  color: white;
+  margin-top: 10px;
+  margin-left: 100px;
+}
+.active {
+  transform: rotateY(180deg);
+}
+i {
+  cursor: pointer;
+}
+/*# sourceMappingURL=./index.css.map */
