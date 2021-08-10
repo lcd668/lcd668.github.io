@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
 </head>
+
 <body>
-    <div id="demo">{{ fullName }}</div>
+    <div id="example">
+        <p>{{msg}}</p>
+        <p>{{rmsg}}</p>
+    </div>
+
+    <div id="demo">{{ fullname }}</div>
 
     <script>
+        var example = new Vue({
+            el: "#example",
+            data: {
+                msg: "hello",
+            },
+            computed: {
+                rmsg: function () {
+                    return this.msg.split('').reverse().join('')
+                }
+            }
+        })
+
         var vm = new Vue({
-            el:"#demo",
-            data:{
-                
+            el: "#demo",
+            data: {
+                firstname: 'flp',
+                lastname: 'mmm',
+            },
+            computed:{
+                fullname:function(){
+                    return this.firstname +''+this.lastname
+                }
             }
         })
     </script>
 </body>
+
 </html>
