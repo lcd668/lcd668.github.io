@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .abox {
+            width: 420px;
+            height: 420px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .abox img {
+            height: 100%;
+        }
+
+        .cover {
+            width: 140px;
+            height: 140px;
+            background-color: rgba(177, 59, 94, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .bbox {
+            width: 420px;
+            height: 420px;
+            position: absolute;
+            top: 0;
+            left: 420px;
+            overflow: hidden;
+        }
+
+        .bbox img {
+            width: 300%;
+        }
+        .cbox img{
+width: 20%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="l">
+            <div class="abox" @mousemove="move">
+                <img :src="currentimg">
+                <div class="cover" :style="{top: y + 'px' ,left : x + 'px'}"></div>
+            </div>
+            <div class="cbox">
+                <ul>
+                    <li v-for=""></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="r">
+            <div class="bbox" :style="Move" >
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                currentindex: 0,
+                imgarr: [
+                    "images/banner1.jpg",
+                    "images/banner2.jpg",
+                    "images/banner3.jpg",
+                    "images/banner4.jpg",
+                    "images/banner5.jpg",
+                ],
+                x: 0,
+                y: 0,
+            },
+            computed: {
+                currentimg: function () {
+                    return `https://www.17sucai.com/preview/905244/2019-06-20/%E6%B7%98%E5%AE%9D%E4%B8%BB%E5%9B%BE/${this.imgarr[this.currentindex]}`;
+                },
+                Move:function(){
+                    return{ backgroundImage: `url(${this.currentimg})`,
+                    backgroundPosition: `-${3 * this.x}px -${3 * this.y}px`,
+                    backgroundSize:`300%`,
+                }
+
+                }
+            },
+            methods: {
+                move: function (event) {
+                    var x = event.offsetX - 70;
+                    var y = event.offsetY - 70;
+                    if (x < 0) {
+                        x = 0
+                    }
+                    if (y < 0) {
+                        y = 0
+                    }
+                    if (x > 280) {
+                        x = 280
+                    }
+                    if (y > 280) {
+                        y = 280
+                    }
+                    this.x = x;
+                    this.y = y;
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="msg">
+        <p> my name is:{{msg}}</p>
+        <textarea name="" v-model="msg" placeholder="add multiple lines">{{msg}}</textarea>
+        <hr>
+        <br>
+        <label for="checkbox">{{ik}}</label>
+        <input type="checkbox" value="a" v-model="mmg">
+        <br>
+        <label for="checkbox">{{ik}}</label>
+        <input type="checkbox" value="b" v-model="mmg">
+        <br>
+        <label for="checkbox">{{ik}}</label>
+        <input type="checkbox" value="c" v-model="mmg">
+        <br>
+<hr>
+        <input type="radio" v-model="sex" value="man">
+        <label for="radio">man</label>
+        <input type="radio" v-model="sex" value="woman">
+        <label for="radio">woman</label>
+        <hr>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                msg: "",
+                mpg: true,
+                ik:"I konw",
+                mmg:[],
+                sex:"woman",
+            }
+        })
+    </script>
+</body>
+
+</html>

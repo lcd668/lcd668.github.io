@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        #app {
+            width: 400px;
+            height: 100px;
+            background-color: moccasin;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .abox {
+            display: flex;
+        }
+
+        .abox li {
+            flex: 1;
+            text-align: center;
+            height: 25px;
+            border: 2px solid transparent;
+        }
+        .abox .active{
+            color: white;
+            border-bottom: 2px solid green;
+
+        }
+        .bbox{
+            margin: 5px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <ul class="abox">
+            <li 
+            v-for="(tab,index) in tabs" 
+            :class="{active: index === currentindex}" 
+            @click="currentindex = index">
+            {{tab.title}}</li>
+        </ul>
+        <ul class="bbox">
+            <li v-for="(tab,index) in tabs" v-if="index === currentindex">{{tab.cont}}</li>
+        </ul>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+
+                currentindex: 0,
+                tabs: [
+                    {
+                        title: "公告",
+                        cont: "cont1",
+                    },
+                    {
+                        title: "决定",
+                        cont: "cont2",
+                    },
+                    {
+                        title: "会议",
+                        cont: "cont3",
+                    },
+                ],
+
+            },
+        });
+    </script>
+</body>
+
+</html>
